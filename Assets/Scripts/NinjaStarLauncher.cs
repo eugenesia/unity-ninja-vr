@@ -30,7 +30,7 @@ public class NinjaStarLauncher : MonoBehaviour {
 		}
 		*/
 		//1 
-		if (GvrViewer.Instance.VRModeEnabled /*&& GvrViewer.Instance.Triggered*/ && !_gameController.isGameOver) {  
+		if (GvrViewer.Instance.VRModeEnabled && GvrViewer.Instance.Triggered && !_gameController.isGameOver) {  
 			GameObject vrLauncher = GvrViewer.Instance.GetComponentInChildren<GvrHead>().gameObject;
 			// 2
 			LaunchNinjaStarFrom(vrLauncher, _vrShooterOffset);
