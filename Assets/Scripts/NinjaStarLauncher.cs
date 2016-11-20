@@ -32,12 +32,12 @@ public class NinjaStarLauncher : MonoBehaviour {
 		//1 
 
 		// If VR mode is on, detect screen touch (which will then simulate a mouseclick)
-		if (GvrViewer.Instance.VRModeEnabled && Input.GetMouseButton(0) && !_gameController.isGameOver) {  
-			GameObject vrLauncher = GvrViewer.Instance.GetComponentInChildren<GvrHead>().gameObject;
-			// 2
+		if (Input.GetMouseButton(0) && !_gameController.isGameOver) {
+			//GameObject vrLauncher = GvrViewer.Instance.GetComponentInChildren<GvrHead>().gameObject;
+			GameObject vrLauncher = GameObject.Find("GvrViewerMain");
 			LaunchNinjaStarFrom(vrLauncher, _vrShooterOffset);
-		} else if (!GvrViewer.Instance.VRModeEnabled && Input.GetButtonDown("Fire1") && 
-			!_gameController.isGameOver) {
+
+		} else if (Input.GetButtonDown("Fire1") && !_gameController.isGameOver) {
 			// This is the same code as before
 			Vector3 mouseLoc = Input.mousePosition;
 			Vector3 worldMouseLoc = Camera.main.ScreenToWorldPoint(mouseLoc);
